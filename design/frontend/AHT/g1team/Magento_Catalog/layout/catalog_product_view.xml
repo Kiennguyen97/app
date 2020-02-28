@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+    <!-- //TODO: dung  -->
+        <!-- <referenceBlock name="product.info.options.wrapper" remove="true"/> -->
+
+
+    <!-- //TODO: khong dung -->
+        <!-- <referenceBlock name="product.info.options" remove="true"/>
+        <referenceBlock name="product.info.options.text" remove="true"/>
+        <referenceBlock name="product.info.options.file" remove="true"/>
+        <referenceBlock name="product.info.options.select" remove="true"/>
+        <referenceBlock name="product.info.options.date" remove="true"/>
+        <referenceBlock name="product.info.options.default" remove="true"/> -->
+
+
+
+    </body>
+
+
+
+
+</page>

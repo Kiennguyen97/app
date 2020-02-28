@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="sales_model_service_quote_submit_before">
+        <!-- <observer name="ahtg1_g1sj428" instance="AHTG1\G1SJ428\Model\Observer\SaveDeliveryDateToOrderObserver"/> TODO: cách bthg -->
+      <!-- TODO: Cách dung fieldset.xml -->
+        <observer name="ahtg1_g1sj428_sales_model_service_quote_submit_before" instance="AHTG1\G1SJ428\Model\Observer\SaveOrderBeforeSalesModelQuoteObserver" />
+    </event>
+</config>

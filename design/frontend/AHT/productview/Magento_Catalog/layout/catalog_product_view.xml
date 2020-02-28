@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page layout="1column" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <move element="page.main.title" destination="product.info.main" before="product.info.price"/>
+        <move element="product.info.sku" destination="product.info.main" before="product.info.price"/>
+        <move element="product.info.review" destination="product.info.main" before="-"/>
+        <referenceContainer name="product.info.stock.sku" remove="true"/>
+        <move element="product.info.overview" destination="product.info.main" after="product.info.price" />
+        <referenceContainer name="product.info.social">
+            <block class="Magento\Framework\View\Element\Template" name="my.share.link"  template="Magento_Catalog::product/view/share-link.phtml" after="product.info.mailto"/>
+        </referenceContainer>
+        <referenceContainer name="product.info.main">
+            <block class="Magento\Framework\View\Element\Template" name="my.modal"  template="Magento_Catalog::product/view/modal.phtml" after="product.info.social"/>
+        </referenceContainer>
+    </body>
+</page>

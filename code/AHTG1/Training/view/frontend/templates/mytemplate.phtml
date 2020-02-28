@@ -1,0 +1,13 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+$myHelper = $this->helper('AHTG1\Training\Helper\Data');
+echo $this->getLayout()
+          ->createBlock('Magento\Cms\Block\Block')
+          ->setBlockId($myHelper->getGeneralConfig('text'))
+          ->toHtml();
+?>

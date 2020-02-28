@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="AHTG1" translate="label" sortOrder="12">
+            <label>AHTG1</label>
+        </tab>
+        <section id="g1429" translate="label" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>G1429</label>
+            <tab>AHTG1</tab>
+            <resource>AHTG1_G1429::G1429</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Related Product Configuration</label>
+                <field id="yes" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Related Product :</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Enable/Disable SearchAutoComplete</comment>
+                </field>
+                <field id="productshow" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Product Show: </label>
+                    <source_model>AHTG1\G1429\Model\Config\Source\Select</source_model>
+                </field>
+                <field id="productsku" translate="label" type="textarea" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Product Sku: </label>
+                    <depends>
+                        <field id="g1429/general/productshow">2</field>
+                    </depends>
+                </field>
+                <field id="productcate" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Product Category: </label>
+                    <source_model>AHTG1\G1429\Model\Config\Source\Category</source_model>
+                    <depends>
+                        <field id="g1429/general/productshow">1</field>
+                    </depends>
+                </field>
+                <!-- <field id="test1" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>TEST1: </label>
+                    <source_model>AHTG1\G1429\Model\Config\Source\Show</source_model>
+                </field>
+                <field id="test2" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>TEST2: </label>
+                    <source_model>AHTG1\G1429\Model\Config\Source\GroupSelect</source_model>
+                </field>
+                <field id="test3" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>TEST3: </label>
+                    <source_model>AHTG1\G1429\Model\Config\Source\Categorylist</source_model>
+                </field> -->
+                <field id="test4" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>TEST4: </label>
+                    <source_model>AHTG1\G1429\Model\Config\Source\NA</source_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

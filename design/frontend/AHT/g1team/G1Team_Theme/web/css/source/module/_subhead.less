@@ -1,0 +1,151 @@
+//TODO: Welcome
+.welcome {
+    margin: 120px 19.5% 0 19.5%;
+    // width: 90%;
+    height: 900px;
+    .welcome-item {
+        margin-left: 0 10% 0 40%;
+        padding-left: 44.7%;
+        position: relative;
+
+        .pattern,
+        .welcome-video,
+        .item {
+            position: absolute;
+            
+        }
+
+        .pattern {
+            top: 0;
+            right: 0;
+            z-index: 10;
+        }
+
+        .item {
+            z-index: 20;
+            margin-top: 79px;
+            margin-left: 149px;
+            margin: 79px 0 92px 147px;
+            .item-extend {
+                max-width: 580px;
+                position: absolute;
+                top: 0;
+                left: -40.4vw;
+                color: black;
+                .item-extend-content {
+                    padding-top:50px;
+                    .item-extend-title {
+                        @media screen {
+                            @media (min-width:1600px) {
+                                &::before {
+                                    width: 33%;
+                                    top: 47px;
+                                }
+                            }
+            
+                            @media (min-width:768px) and (max-width: 1600px) {
+                                &::before {
+                                    width: 10%;
+                                    top: 30px;
+                                }
+                            }
+                        }
+            
+                        &::before {
+                            left: -102px;
+                        }
+            
+                        &:hover::before {
+                            left: 0px;
+                        }
+                    }
+            
+                    .item-extend-name {
+                        @media screen {
+                            @media (min-width:1600px) {
+                                font-size: 80px;
+                                margin-top: 24px;
+                                letter-spacing: 16px;
+                            }
+            
+                            @media (min-width:768px) and (max-width: 1600px) {
+                                margin-top: 20px;
+                                letter-spacing: 16px;
+                                font-size: 60px;
+                            }
+                        }
+                    }
+                    .content{
+                        margin-top:8px;
+                        span{
+                            color: #8a8888;
+                            .text-style(Poppins,14px,400);
+                            letter-spacing: 0px;
+                            line-height: 24px
+                        }
+                    }
+                    
+            
+                    .item-extend-button {
+                        margin-top: 47px;
+                        letter-spacing: 2.7px;
+                        .learn-more a{
+                            
+                            margin-left: -15px;
+                            .text-style(Poppins,14px,400);
+                            span {
+                                color: black;
+                                &::before{
+                                    top:24px;
+                                    height: 2px;
+                                }
+                                &:hover {
+                                    &::before {
+                                        width: 50%;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .welcome-video {
+            z-index: 30;
+            margin-top: 423px;
+
+            .badge-title {
+                @media screen {
+                    @media (min-width:1600px) {
+                        .badge(4.05vw, 4.05vw, white, red, 42%, 37.3%);
+
+                        &::before {
+                            width: 5.1vw;
+                            height: 5.1vw;
+                        }
+                    }
+
+                    @media (min-width:768px) and (max-width: 1600px) {
+                        .badge(6vw, 6vw, white, red, 42%, 37.3%);
+
+                        &::before {
+                            width: 7vw;
+                            height: 7vw;
+                        }
+                    }
+                }
+
+                div {
+                    font-size: 30px;
+                }
+
+                &:hover::before {
+                    opacity: 0;
+                    width: 10vw;
+                    height: 10vw;
+                }
+            }
+        }
+    }
+}

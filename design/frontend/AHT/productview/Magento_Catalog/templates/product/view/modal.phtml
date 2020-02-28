@@ -1,0 +1,53 @@
+<span id="size-guide-btn">Size Guilde </span>
+<span id="delivery-btn">Delivery & Return</span>
+
+<div id="size-guide-content">
+    <img class="img-responsive" src="https://themes.magesolution.com/supro/pub/media/wysiwyg/sizecharts.png" alt="">
+</div>
+
+<div id="delivery-content">
+    <div class="modal-inner-content">
+        <div class="modal-content">
+            <div class="modal-body">
+                <h6 class="margin-bottom10">Delivery</h6>
+                <p>All orders shipped with UPS Express.</p>
+                <p>Always free shipping for orders over US $250.</p>
+                <p>All orders are shipped with a UPS tracking number.</p>
+                <h6 class="margin-bottom10">Returns</h6>
+                <p>Items returned within 14 days of their original shipment date in same as new condition will be eligible for a full refund or store credit.</p>
+                <p>Refunds will be charged back to the original form of payment used for purchase.</p>
+                <p>Customer is responsible for shipping charges when making returns and shipping/handling fees of original purchase is non-refundable.</p>
+                <p>All sale items are final purchases.</p>
+                <h6 class="margin-bottom10">Help</h6>
+                <p>Give us a shout if you have any other questions and/or concerns.</p>
+                <p>Email: <a href="mailto:contact@domain.com">contact@domain.com</a></p>
+                <p>Phone: +1 (23) 456 789</p>
+                <p></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+    require(["jquery", "Magento_Ui/js/modal/modal"], function($, modal) {
+        var options = {
+            type: 'popup', // popup or slide
+            responsive: true, // true = on smaller screens the modal slides in from the right
+            // title: 'Modal main title',
+            innerScroll : true,
+            buttons: []
+        };
+
+        var popup1 = modal(options, $('#size-guide-content'));
+        var popup2 = modal(options, $('#delivery-content'));
+
+        $("#size-guide-btn").click(function() {
+            $('#size-guide-content').modal('openModal');
+        });
+
+        $("#delivery-btn").click(function() {
+            $('#delivery-content').modal('openModal');
+        });
+    });
+</script>

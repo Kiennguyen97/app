@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <link  src="Magento_Theme::images/favicon-16x16.png" rel="icon" type="image/x-icon" sizes="16x16"/>
+        <script src="https://kit.fontawesome.com/1fdba58441.js"  src_type="url"></script>
+        <!-- <css  src="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css"  src_type="url"> TODO: dung  -->
+
+
+        
+        <!-- <script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=5c3d4db255ca180011d702cf&amp;product=inline-share-buttons" async="async"></script> -->
+        <!-- <link href='https://platform-api.sharethis.com/js/sharethis.js#property=5dc137a77f180b0013d88598&product=inline-share-buttons' src_type="url"></link> -->
+        <!-- <![CDATA[<script src='https://platform-api.sharethis.com/js/sharethis.js#property=5dc1309d61f5220012c0d78d&amp;product=inline-share-buttons' src_type="url" async='async'/>]]> -->
+        <!-- <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap" rel="stylesheet" src_type="url"> -->
+    </head>
+</page>

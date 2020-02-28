@@ -1,0 +1,54 @@
+<!-- <span class="st_facebook_custom" displaytext="Facebook" st_processed="yes"></span>
+<span class="st_twitter_custom" displaytext="Twitter" st_processed="yes"></span>
+<span class="st_pinterest_custom" displaytext="Pinterest" st_processed="yes"></span>
+<span class="st_email_custom" displaytext="Email" st_processed="yes"></span>
+<span class="st_sharethis_custom" displaytext="ShareThis" st_processed="yes"></span> -->
+<div class="sharethis-inline-share-buttons"></div>
+<div class="up-top"><a href="#" style="bottom:25px;"><span class="lnr lnr-chevron-up"></span></a></div>
+<script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=5c3d4db255ca180011d702cf&amp;product=inline-share-buttons" async="async">
+</script>
+<script>
+    require([
+        'jquery'
+    ], function($) {
+        'use strict';
+        // $(window).scroll(function() {
+        //     var currentScrollPos = $(window).scrollTop();
+        //     if (currentScrollPos <= 20) {
+        //         $("div.up-top").css({
+        //             bottom: '-20px'
+        //         });
+        //     } else {
+        //         $("div.up-top").css({
+        //             bottom: '20px'
+        //         });
+        //     }
+        // });
+
+
+    });
+</script>
+<script type="text/javascript">
+    require([
+        'jquery'
+    ], function($) {
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 1) {
+                $('div.up-top').css({
+                    bottom: "25px"
+                });
+            } else {
+                $('div.up-top').css({
+                    bottom: "-45px"
+                });
+            }
+        });
+        $('div.up-top').click(function() {
+            $('html, body').animate({
+                scrollTop: '0px'
+            }, 800);
+            return false;
+        });
+
+    });
+</script>

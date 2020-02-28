@@ -1,0 +1,40 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<?php
+/**
+ * Category view template
+ *
+ * @var $block \Magento\Catalog\Block\Category\View
+ */
+
+
+?>
+<?php
+    $_helper    = $this->helper('Magento\Catalog\Helper\Output');
+    $_category  = $block->getCurrentCategory();
+    $_Html   = '';
+    // var_dump(substr($block->getUrl('pub/media/catalog/category/'.$_category->getCustomImage()), 0, -1));
+
+    // var_dump ($_category->getCustomImage());
+    if ($_imgUrl = substr($block->getUrl('pub/media/catalog/category/'.$_category->getCustomImage()), 0, -1)) {
+        $_Html = '<div style = "width:500px; margin-left: 30%; display: inline-flex; align-items: center;"class="hi">
+        <img style = "width:200px " src="' . $_imgUrl . '" alt="'
+         . $block->escapeHtml($_category->getName()) . '" title="' 
+        . $block->escapeHtml($_category->getName()) . '" class="image" />
+            <p>---'.$_category->getText().'----'
+            .$_category->getTextarea().'-----'
+            .$_category->getYesno().'----'
+            .$_category->getSelect().'</p>
+        </div>';
+
+        // $_imgHtml = '<div class="hi"><img src="' . $_imgUrl .'category/'.$_category->getCustomImage(). '" alt="' . $block->escapeHtml($_category->getName()) . '" title="' . $block->escapeHtml($_category->getName()) . '" class="image" /></div>';
+        /* @escapeNotVerified */ echo $_Html;
+    }
+?>

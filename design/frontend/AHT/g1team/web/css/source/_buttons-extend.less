@@ -1,0 +1,45 @@
+.button-transparent {
+    border-radius: none;
+    background: transparent;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 30px;
+    width: 70px;
+    height: 70px;
+    border: 1px solid rgba(255, 255, 255, .2);
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: all .3s;
+    float: left;
+    &:hover {
+        border: 10px solid rgba(255, 255, 255, .6);
+        background: none;
+        color: white;
+    }
+    &.login{
+        float:right;
+        width: 200px;
+        a{  
+            font-style: normal;
+            text-transform: uppercase;
+            letter-spacing: 2.9px;
+            color: white;
+            font-size: 14px;
+            font-family: 'Poppins';
+            font-weight: 400;
+            &:hover{
+                
+                color: white;
+                text-decoration: none;
+            }
+        }
+    }
+}
+button:focus, button:active, .cart.table-wrapper .actions-toolbar > .action:focus, .cart.table-wrapper .actions-toolbar > .action:active, .action-gift:focus, .action-gift:active {
+    background: none;
+	border: 1px solid #cdcdcd;
+	color: white;
+}

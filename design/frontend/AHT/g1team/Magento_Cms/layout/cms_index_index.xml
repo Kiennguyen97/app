@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="columns.top">
+            <block class="G1Team\Theme\Block\Product\Widget\ProductList" name="slider-header" before="-">
+                <arguments>
+                    <argument name="title" xsi:type="string">Slider-Header-Slider</argument>
+                    <argument name="products_count" xsi:type="string">4</argument>
+                    <argument name="template" xsi:type="string">G1Team_Theme::product/widget/slider1.phtml</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+        <referenceContainer name="main">
+            <block class="G1Team\Theme\Block\Product\Widget\SubHead" name="sub-header" before="-">
+                <arguments>
+                    <argument name="title" xsi:type="string">Sub-Header</argument>
+                    <argument name="product_id" xsi:type="string">6</argument>
+                    <argument name="template" xsi:type="string">G1Team_Theme::product/widget/subhead.phtml</argument>
+                </arguments>
+                <!-- <block class="G1Team\Theme\Block\Product\Widget\ProductList" name="my-list-product">
+                    <arguments>
+                        <argument name="title" xsi:type="string">List-Product</argument>
+                        <argument name="products_count" xsi:type="string">3</argument>
+                        <argument name="template" xsi:type="string">G1Team_Theme::product/listproduct.phtml</argument>
+                        <argument name="type" xsi:type="string">list</argument>
+                    </arguments>
+                </block> -->
+            </block>
+            <block class="Magento\Framework\View\Element\Template" name="client" template="G1Team_Theme::client.phtml" after="sub-header" />
+            <block class="G1Team\Theme\Block\Product\Widget\ProductList" name="my-list-product" after="client">
+                <arguments>
+                    <argument name="title" xsi:type="string">List-Product</argument>
+                    <argument name="products_count" xsi:type="string">3</argument>
+                    <argument name="template" xsi:type="string">G1Team_Theme::product/listproduct.phtml</argument>
+                    <argument name="type" xsi:type="string">list</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

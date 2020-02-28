@@ -1,0 +1,117 @@
+//TODO: Title
+
+//TODO: client
+
+.client {
+    margin: 190px 0 0 120px;
+    width: auto;
+    position: relative;
+
+    .title {
+        top: -15.5%;
+        left: 14.1%;
+        color: black;
+
+        span.title-name {
+            letter-spacing: 2.8px;
+
+            &::before {
+                width: 31%;
+                top: 44px;
+                left: -100px;
+            }
+
+            &:hover::before {
+                width: 20%;
+                left: 0px;
+            }
+        }
+
+        div.name {
+            margin-left: -3px;
+            margin-top: 18px;
+            color: white;
+
+            span {
+                color: black;
+            }
+
+        }
+
+    }
+
+    .slider-client {
+        position: absolute;
+        margin-left: 255px;
+        margin-top: 150px;
+        max-width: 1920px;
+
+        #sliderclient {
+            padding-top: 80px;
+            overflow: hidden;
+            height: 700px;
+            padding-left: 40px;
+        }
+
+        .owl-carousel .owl-stage-outer {
+            overflow: visible;
+
+            .owl-stage {
+                display: flex;
+                flex-wrap: nowrap;
+            }
+        }
+
+        .owl-item {
+            min-width: 437px;
+            max-width: 437px;
+            margin-left: -37px;
+
+            &:nth-child(2n+0) {
+                z-index: 10;
+                margin-top: -80px;
+
+                .item .name {
+                    bottom: 80px;
+                }
+            }
+
+            &::nth-child(2n+1) {
+                z-index: 5;
+            }
+
+        }
+
+        .owl-dots {
+            position: absolute;
+            left: -37px;
+            bottom: 0;
+
+            .owl-dot {
+                span {
+                    width: 273px;
+                    height: 2px;
+                    margin: 10px auto;
+                    background: #869791;
+                    display: block;
+                }
+
+                &.active {
+
+                    span {
+                        background: white;
+                    }
+                }
+
+                &:active {
+                    box-shadow: none;
+                }
+
+
+            }
+
+        }
+    }
+
+}
+

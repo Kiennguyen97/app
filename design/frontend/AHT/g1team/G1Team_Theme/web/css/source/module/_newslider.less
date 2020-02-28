@@ -1,0 +1,133 @@
+//TODO:slider-owl
+
+//TODO: Silder-header
+.owl-theme#sliderheader {
+    top: 0;
+    position: relative;
+
+    .owl-nav {
+        margin: 0;
+        position: absolute;
+        right: 264px;
+        bottom: 46px;
+        color: white;
+
+        // width: 67px;
+        .owl-prev,
+        .owl-next {
+            display: inline;
+            margin: 0;
+        }
+
+        .owl-prev {
+            margin-right: 20px;
+        }
+
+        .owl-next {
+            margin-left: 30px;
+        }
+    }
+
+    .owl-dots {
+        position: absolute;
+        right: 76px;
+        bottom: 41px;
+
+        .owl-dot {
+            span {
+                width: 30px;
+                height: 2px;
+                margin: 10px auto;
+                background: #869791;
+                display: block;
+            }
+
+            &.active {
+                
+                span {
+                    background: white;
+                }
+            }
+            &:active{
+                box-shadow: none;
+            }
+
+
+        }
+
+    }
+
+}
+
+//TODO: Silder - header
+#slider-header {
+    position: relative;
+
+    .count-item,
+    .total-item {
+        color: white;
+        position: absolute;
+        bottom: 41px;
+        right: 50px;
+        z-index: 99;
+        .text-style(Poppins, 20px, 400);
+    }
+
+    .count-item {
+        right: 209px;
+    }
+
+    .contact {
+        // width: 100%;
+        color: white;
+        margin: 0 auto;
+        position: absolute;
+        transform: rotate(90deg);
+        bottom: 48%;
+        right: -2.5%;
+        z-index: 99;
+        letter-spacing: 3px;
+        cursor: pointer;
+        .text-style(Poppins, 14px, 400);
+
+        span {
+            text-transform: uppercase;
+            position: relative;
+
+            &.share {
+                &::before {
+                    content: '';
+                    background: red;
+                    height: 1px;
+                    width: 52%;
+                    position: absolute;
+                    top: 12px;
+                    left: 69px;
+                    transition: all .3s;
+                }
+
+                &:hover::before {
+                    width: 30%;
+                }
+
+            }
+
+            &.icon {
+                margin-left: 48px;
+
+                i {
+                    margin-right: 16px;
+                }
+            }
+        }
+    }
+
+    .title {
+        transform: rotate(90deg);
+        margin: 0 auto;
+        position: absolute;
+        right: 47%;
+        bottom: 10.85%;
+        z-index: 99;
+    }
+}

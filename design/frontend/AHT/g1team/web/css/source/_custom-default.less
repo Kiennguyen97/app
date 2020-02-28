@@ -1,0 +1,59 @@
+.page-header .header.content{
+    // max-width: 100%;
+    background: transparent;
+    z-index: 99;
+    width: 100%;
+    height: 169px;
+    padding: 50px 50px 0;
+    position: fixed;
+    transition: 0.5s;
+    &.scroll {
+        height: 120px;
+        background: black;
+        opacity: 0.5;
+        padding: 20px 50px 0;
+    }
+    .logo{
+        margin-left: 34px;
+        margin-top: 8px;
+    }
+    .minicart-wrapper .action.showcart{
+        display: inline-flex;
+        &::before{
+            display: none;
+        }
+    }
+    .minicart-wrapper{
+        margin-right: 31px;
+    }
+    .block.block-search{
+        display: none;
+    }
+}
+.page-header .panel.wrapper {
+	// border-bottom: 1px solid #e8e8e8;
+	display: none;
+}
+
+.navigation, .breadcrumbs, .page-header .header.panel, .header.content, .footer.content, .page-wrapper > .widget, .page-wrapper > .page-bottom, .block.category.event, .top-container, .page-main {
+	box-sizing: border-box;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 100%;
+    padding: 0;
+}
+// .page-title-wrapper{
+//     display: none;
+// }
+.action.showcart.button-transparent .counter.qty {
+	background: red;
+	color: #fff;
+	position: absolute;
+	top: 0px;
+    right: 0px;
+    line-height: 14px;
+    .counter-number{
+        text-shadow: 0 0 7px #000000;
+        font-size: 1.6rem;
+    }
+}

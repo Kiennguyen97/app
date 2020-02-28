@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
+	<widget id="G1Team_Product" class="G1Team\Theme\Block\Product\Widget\ProductList" placeholder_image="Magento_Catalog::images/product_widget_new.png">
+		<label translate="true">ProductSliderHeader_G1Team</label>
+		<description>Kien Custom Slider</description>
+		<parameters>
+			<parameter name="title" xsi:type="text" required="false" visible="true">
+				<label translate="true">Title</label>
+			</parameter>
+			<!-- <parameter name="show_pager" xsi:type="select" visible="true" source_model="Magento\Config\Model\Config\Source\Yesno">
+				<label translate="true">Display Page Control</label>
+			</parameter> -->
+			<parameter name="products_count" xsi:type="text" required="true" visible="true">
+				<label translate="true">Number of Products to Display</label>
+				<value>4</value>
+			</parameter>
+			<parameter name="template" xsi:type="select" required="true" visible="true">
+				<label translate="true">Template</label>
+				<options>
+					<option name="default" value="G1Team_Theme::product/widget/slider1.phtml" selected="true">
+						<label translate="true">Products Slider1 Template</label>
+					</option>
+				</options>
+			</parameter>
+		</parameters>
+	</widget>
+	<widget id="G1Team_SubHead" class="G1Team\Theme\Block\Product\Widget\SubHead" placeholder_image="Magento_Catalog::images/product_widget_new.png">
+		<label translate="true">ProductSubHead</label>
+		<description>SubHead</description>
+		<parameters>
+			<parameter name="title" xsi:type="text" required="false" visible="true">
+				<label translate="true">Title</label>
+			</parameter>
+			<parameter name="product_id" xsi:type="text" required="true" visible="true">
+				<label translate="true">ID of Product you want to Display</label>
+				<value>6</value>
+			</parameter>
+			<parameter name="template" xsi:type="select" required="true" visible="true">
+				<label translate="true">Template</label>
+				<options>
+					<option name="default" value="G1Team_Theme::product/widget/subhead.phtml" selected="true">
+						<label translate="true">Products SubHead1 Template</label>
+					</option>
+				</options>
+			</parameter>
+		</parameters>
+	</widget>
+</widgets>

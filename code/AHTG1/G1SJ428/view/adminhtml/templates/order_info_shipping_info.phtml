@@ -1,0 +1,23 @@
+<div id="delivery-date">
+    <strong><?php echo __('Delivery Date') ?></strong>
+    <span class="price"><?= $block->getDeliveryDate() ?></span></div>
+<div id="custom_text">
+    <strong><?php echo __('Custom Text') ?></strong>
+    <span class="price"><?= $block->getCustomText() ?></span></div>
+
+<script type="text/javascript">
+    require(
+        ['jquery'],
+        function($) {
+            var element1 = $('#delivery-date').detach();
+            var element2 = $('#custom_text').detach();
+            var element3 = $('#order_comment').detach();
+
+            $('.order-shipping-method').append(element1);
+            $('.order-shipping-method').append(element2);
+            // $('.order-shipping-method').append(element3);
+
+
+        }
+    );
+</script>

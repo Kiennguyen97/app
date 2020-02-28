@@ -1,0 +1,50 @@
+<?php
+
+/**
+ * <img src="<?php echo $block->getViewFileUrl('images/parrern-welcome_03.jpg'); ?>" alt="" />
+ * <img src="<?php echo $block->getImage_Url($_item) ?>" alt="" />
+ * <a href="<?= $block->getProductUrl($product) ?>" class="product-item-photo"> <span>Find our more</span></a>
+ */
+$id = $block->getProductID();
+$product = $block->getProduct_byID($id);
+?>
+
+<div class="welcome">
+    <div class="welcome-item">
+        <div class="pattern">
+            <img src="<?= $block->getViewFileUrl('images/parrern-welcome_03.jpg') ?>" alt="" />
+        </div>
+        <div class="item">
+            <img src="<?= $block->getImage_Url($product) ?>" alt="" />
+            <div class="item-extend">
+                <div class="item-extend-content">
+                    <div class="item-extend-title">
+                        <span>Sub heading</span>
+                    </div>
+                    <div class="item-extend-name">
+                        Welcome <br>
+                    </div>
+                    <div class="content">
+                        <span>Lorem Ipsum is simply dummy text of the printing and typesetting
+                            industry.
+                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                            when an unknown printer took a galley of type and scrambled it to make a type
+                            specimen book.</span>
+                    </div>
+                    <div class="item-extend-button">
+                        <button class="learn-more">
+                            <a href="<?= $block->getProductUrl($product) ?>" class="product-item-photo"> <span>Find our more</span></a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="welcome-video">
+            <img src="<?=$block->getViewFileUrl('images/welcome-video_03.jpg')?>" alt="" />
+            <div class="badge-title">
+                <div><i class="fas fa-caret-right"></i></div>
+            </div>
+        </div>
+
+    </div>
+</div>

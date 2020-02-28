@@ -1,0 +1,330 @@
+a {
+    text-decoration: none;
+    color: white;
+
+    &:hover {
+        text-decoration: none;
+        color: #123562;
+    }
+}
+
+//TODO: Item-Extend
+.item-extend {
+    top: 20%;
+    position: absolute;
+    width: auto;
+    height: 60%;
+    left: 10%;
+    color: white;
+
+    .item-extend-content {
+        padding-left: 108px;
+        padding-top: 63px;
+
+        .item-extend-title {
+            .text-style(Poppins, 14px, 400);
+            letter-spacing: 2.8px;
+            position: relative;
+            cursor: pointer;
+            text-transform: uppercase;
+
+            @media screen {
+                @media (min-width:1600px) {
+                    &::before {
+                        width: 28%;
+                        top: 66px;
+                    }
+                }
+
+                @media (min-width:768px) and (max-width: 1600px) {
+                    &::before {
+                        width: 23%;
+                        top: 30px;
+                    }
+                }
+            }
+
+            &::before {
+                content: '';
+                position: absolute;
+                height: 1px;
+                background: red;
+                left: -146px;
+                transition: .5s;
+            }
+
+            &:hover::before {
+                left: 0px;
+            }
+        }
+
+        .item-extend-name {
+
+            text-transform: uppercase;
+
+            @media screen {
+                @media (min-width:1600px) {
+                    .text-style(Poppins, 100px, 400);
+                    letter-spacing: 20px;
+                    margin-top: 71px;
+                    line-height: 120px;
+
+                    span.second {
+                        font-weight: 700;
+                    }
+                }
+
+                @media (min-width:768px) and (max-width: 1600px) {
+                    line-height: 120px;
+                    margin-top: 20px;
+                    .text-style(Poppins, 60px, 400);
+                    letter-spacing: 5px;
+
+                    .second {
+                        font-weight: 500;
+                    }
+                }
+            }
+
+
+        }
+
+        .item-extend-button {
+            text-transform: uppercase;
+            margin-top: 47px;
+            margin-left: 3px;
+            letter-spacing: 2.8px;
+            display: flex;
+
+            .join {
+                display: inline-flex;
+                width: 160px;
+                .text-style(Poppins, 14px, 400);
+            }
+
+            .learn-more {
+                cursor: pointer;
+                width: 160px;
+                background: transparent;
+
+                border: none;
+                margin-left: 60px;
+                .text-style(Poppins, 14px, 400);
+
+                span {
+                    position: relative;
+                    margin-left: -7px;
+                    color: white;
+
+                    &:hover {
+                        text-decoration: none;
+                    }
+
+                    &::before {
+                        content: '';
+                        width: 100%;
+                        height: 1px;
+                        position: absolute;
+                        top: 25px;
+                        left: 0px;
+                        background: red;
+                        display: block;
+                        transition: .5s;
+                    }
+
+                    &:hover {
+                        &::before {
+                            width: 50%;
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+
+}
+
+.item .item-extend .badge-title {
+    opacity: 1;
+
+    @media screen {
+        @media (min-width:1600px) {
+            .badge(5.16vw, 5.16vw, white, red, 91.9%, 40%);
+
+            &::before {
+                width: 6.8vw;
+                height: 6.8vw;
+            }
+        }
+
+        @media (min-width:768px) and (max-width: 1600px) {
+            .badge(6vw, 6vw, white, red, 40%, 40.3%);
+            
+            &::before {
+                width: 8vw;
+                height: 8vw;
+            }
+        }
+    }
+
+    div {
+        font-size: 40px;
+    }
+}
+
+//TODO: badge
+.badge-title {
+    z-index: 99;
+    // .text-style(Raleway, 0.78125vw, 600);
+    cursor: pointer;
+    .border-radius(50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    // .box-shadow(0, 0, 20px, #ddd4d4);
+    &::before {
+        content: '';
+        .border-radius(50%);
+        border: 1px solid rgba(255, 255, 255, .7);
+        position: absolute;
+        transition: .35s;
+    }
+
+    &:hover::before {
+        opacity: 0;
+        width: 10vw;
+        height: 10vw;
+    }
+}
+
+//TODO: Title
+div.title {
+    color: white;
+    cursor: pointer;
+    position: absolute;
+
+    span.title-name {
+        text-transform: uppercase;
+        .text-style(Poppins, 14px, 400);
+        letter-spacing: 2.8px;
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 265%;
+            height: 1px;
+            background: red;
+            bottom: -9px;
+            left: 58px;
+            transition: all .3s;
+        }
+
+        &:hover::before {
+            width: 150%;
+            left: 0px;
+        }
+    }
+
+    div.name {
+        line-height: 130px;
+        color: black;
+        text-transform: uppercase;
+        letter-spacing: 16px;
+        .text-style(Poppins, 80px, 400);
+
+
+
+    }
+}
+
+//TODO:explore
+.explore {
+    transform: rotate(90deg);
+    margin: 0 auto;
+    position: absolute;
+    right: 47%;
+    bottom: 0;
+    z-index: 99;
+
+    span {
+        &::before {
+            content: '';
+            display: block;
+            background: red;
+            width: 250px;
+            height: 1px;
+
+        }
+
+    }
+
+}
+
+//TODO: item
+.item {
+    &:hover{
+        .name,.badge-title,.trailer{
+            opacity: 1;
+        }
+    }
+    .trailer{
+        opacity: 0;
+        position: absolute;
+        text-transform: uppercase;
+        color: white;
+        top:64%;
+        left: 41%;
+        transition: 1s;
+    }
+
+    .name {
+        opacity: 0;
+        text-transform: uppercase;
+        position: absolute;
+        bottom: 0;
+        background: white;
+        width: 100%;
+        height: 73px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: 1s;
+    }
+
+    .badge-title {
+        transition: 1s;
+        opacity: 0;
+
+        @media screen {
+            @media (min-width:1600px) {
+                .badge(4.5vw, 4.5vw, white, red, 38%, 40%);
+
+                &::before {
+                    width: 6vw;
+                    height: 6vw;
+                }
+            }
+
+            @media (min-width:768px) and (max-width: 1600px) {
+                .badge(6vw, 6vw, white, red, 80%, 40.3%);
+
+                &::before {
+                    width: 8vw;
+                    height: 8vw;
+                }
+            }
+        }
+
+        div {
+            font-size: 40px;
+        }
+
+        &:hover::before {
+            opacity: 0;
+            width: 10vw;
+            height: 10vw;
+        }
+    }
+}

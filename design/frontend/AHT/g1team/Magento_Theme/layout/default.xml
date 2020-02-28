@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="report.bugs" remove="false"/>
+        <move element="header-wrapper" destination="header.container" before="-"/>
+        <referenceContainer name="header-wrapper">
+            <block class="Magento\Framework\View\Element\Template" name="kien.menu"  template="Magento_Theme::html/cusmenu.phtml" before="-"/>
+        </referenceContainer>
+        <referenceBlock name="logo">
+            <arguments>
+                <argument name="logo_file" xsi:type="string">images/logo_03.png</argument>
+                <argument name="logo_img_width" xsi:type="number">200</argument>
+                <argument name="logo_img_height" xsi:type="number">55</argument>
+            </arguments>
+        </referenceBlock>
+        <move element="store.menu" destination="header-wrapper" after="kien.menu"/>
+        <move element="authorization-link" destination="header-wrapper" before="minicart" />
+        
+    </body>
+</page>
+

@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+       <add id="AHT_G1T563::helloworld" 
+        title="Helloworld" 
+        translate="title" 
+        module="AHT_G1T563" 
+        sortOrder="51" 
+        dependsOnModule="AHT_G1T563" 
+        resource="AHT_G1T563::helloworld"/>
+
+        <add id="AHT_G1T563::helloworld_config" 
+        title="Configuration" 
+        translate="title" 
+        module="AHT_G1T563" 
+        parent="AHT_G1T563::helloworld" 
+        sortOrder="10" 
+        dependsOnModule="AHT_G1T563" 
+        action="adminhtml/system_config/edit/section/helloworld" 
+        resource="AHT_G1T563::helloworld_config"/>
+       
+    </menu>
+</config>

@@ -1,0 +1,4 @@
+<theme xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Config/etc/theme.xsd">
+    <title>productview-theme</title>    <!--My theme's name-->
+    <parent>Magento/luma</parent>    <!-- The Parent theme in case my theme inheri ts form an existing theme-->
+</theme>
