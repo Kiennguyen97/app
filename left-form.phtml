@@ -1,0 +1,134 @@
+<div class="left-form">
+    <div class="left-form-contact">
+        <div class="left-form-contact-wrap">
+            <div class="title-contact">
+                <span>Pilgrim Ammunition Inc</span>
+            </div>
+            <ul class="content-contact">
+                <li>
+                    <i class="far fa-envelope"></i><span>contact@pilgrimammunition.com</span>
+                </li>
+                <li>
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>1880 University Parkway, Sarasota, FL 34243</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="left-form-map">
+        <img class="my-banner" src="<?php echo $block->getViewFileUrl('images/map.png'); ?>" />
+    </div>
+</div>
+<span></span>
+
+
+https://www.youtube.com/watch?v=o8-q8wPCP3U
+
+<img class="video-image" src="{{media url="wysiwyg/panel/IRWIN-Video_07.jpg"}}" alt="" />
+<div class="callfor-popup">
+    <div class="youtube-video">
+        <iframe id="our-video" src="https://www.youtube.com/embed/LN-Z88NilT8" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div>
+<script>
+    require(
+        [
+            'jquery',
+            'Magento_Ui/js/modal/modal'
+        ],
+        function(
+            $,
+            modal
+        ) {
+            var modaloption = {
+                type: 'popup',
+                modalClass: 'ourcompany-popup',
+                responsive: true,
+                innerScroll: true,
+                clickableOverlay: true,
+                title: 'Our Company',
+                buttons: [{
+                    text: $.mage.__('Close'),
+                    class: 'action-primary',
+                    click: function() {
+                        this.closeModal();
+                    }
+                }]
+            };
+            var callforoption = modal(modaloption, $('.callfor-popup'));
+            $('img.video-image').on('click', function() {
+                $('.callfor-popup').modal('openModal');
+            });
+            $('.ourcompany-popup .action-primary').on('click', function() {
+                var video = $("#our-video").attr("src");
+                $("#our-video").attr("src", "");
+                $("#our-video").attr("src", video);
+            });
+        }
+    );
+</script>
+
+<!--  -->
+<link rel="stylesheet" type="text/css" href="YouTubePopUp.css">
+<script type="text/javascript" src="jquery-1.12.1.min.js"></script>
+<script type="text/javascript" src="YouTubePopUp.jquery.js"></script>
+<script type="text/javascript">
+    jQuery(function() {
+        jQuery("a.bla-1").YouTubePopUp();
+        jQuery("a.bla-2").YouTubePopUp({
+            autoplay: 0
+        }); // Disable autoplay
+    });
+</script>
+<!--  -->
+YouTube:
+<a class="bla-1" href="https://www.youtube.com/watch?v=3qyhgV0Zew0">With Autoplay</a>
+<a class="bla-2" href="https://www.youtube.com/watch?v=3qyhgV0Zew0">Without Autoplay</a>
+<!--  -->
+Vimeo:
+<a class="bla-1" href="https://vimeo.com/81527238">With Autoplay</a>
+<a class="bla-2" href="https://vimeo.com/81527238">Without Autoplay</a>
+<!--  -->
+<script type="text/x-magento-init">
+    {
+    "*": {
+        "youtubepopup": {}
+    }
+}
+</script>
+<!--  -->
+<link rel="stylesheet" type="text/css" href="<?php echo $block->getViewFileUrl('Magento_Theme::css/owl.carousel.css') ?>">
+<!--  -->
+<a class="bla-2" dis href="https://www.youtube.com/watch?v=3qyhgV0Zew0"><img class="video-image" src="{{media url="wysiwyg/panel/IRWIN-Video_07.jpg"}}" alt="" /></a>
+<script>
+    require(
+        [
+            'jquery',
+            'youtubepopup'
+        ],
+        function($) {
+            $("a.bla-2").YouTubePopUp({
+                autoplay: 0
+            });
+        }
+    );
+    
+</script>
+<script>
+    require([
+        'jquery',
+        'owlcarouselslider'
+    ], function($) {
+        'use strict';
+        $('.owl-carousel').owlCarousel({
+            items: 4,
+            margin: 30
+            // loop: true,
+            // autoplay:true,
+            // autoplayTimeout:5000,
+            // autoplayHoverPause: true
+        });
+
+
+    });
+</script>
