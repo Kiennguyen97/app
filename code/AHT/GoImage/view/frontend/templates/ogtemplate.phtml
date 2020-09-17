@@ -1,0 +1,9 @@
+<!-- block : Gssi\GoImage\Block\Metadata -->
+<?php
+    $logourl = $block->getLogoSrc();
+    $imageurl = !$block->getGoImageUrl() ? $logourl : $block->getGoImageUrl() ;
+?>
+<?php if( $block->checkPage() != 'catalog_product_view'): ?>
+  <meta property="og:image" content="<?php echo $imageurl?>"/>
+<?php endif;?>
+ 

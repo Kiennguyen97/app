@@ -1,0 +1,28 @@
+<?php
+$logo = $block->getLogo();
+?>
+<?php if ($logo): ?>
+<div class="product lgo attribute <?php /* @escapeNotVerified */ echo $logo['class']; ?>">
+    <div class="value">
+        <span>
+            <?php if (isset($logo['brandLink'])) : ?>
+                <a href="<?php echo $logo['brandLink']; ?>"><img src="<?php echo $logo['src']; ?>" alt="<?php /* @escapeNotVerified */ echo $logo['attributeText']; ?>" ></a>
+            <?php else: ?>
+                <img src="<?php echo $logo['src']; ?>" alt="<?php /* @escapeNotVerified */ echo $logo['attributeText']; ?>" >
+            <?php endif ?>
+        </span>
+    </div>
+</div>
+<?php endif; ?>
+<!--TODO: EXample -->
+<div class="product lgo attribute bzbrand">
+        <div class="value">
+            <span>
+                <a href="http://dev-upgrade.geobezdan.com/ultra-tec/">
+                    <img src="http://dev-upgrade.geobezdan.com/pub/media//wysiwyg/bz_brand/railfx.png" alt="RailFX®" style="display: inline-block;">
+                </a>
+            </span>
+        </div>
+    </div>
+    <!-- TODO: END EXample -->
+

@@ -1,0 +1,4 @@
+<?php
+
+const DEFAULT_PRODUCTS_COUNT = 10;
+return self::DEFAULT_PRODUCTS_COUNT;

@@ -1,0 +1,1038 @@
+<div class="left-form">
+    <div class="left-form-contact">
+        <div class="left-form-contact-wrap">
+            <div class="title-contact">
+                <span>Pilgrim Ammunition Inc</span>
+            </div>
+            <ul class="content-contact">
+                <li>
+                    <i class="far fa-envelope"></i><span>contact@pilgrimammunition.com</span>
+                </li>
+                <li>
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>1880 University Parkway, Sarasota, FL 34243</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="left-form-map">
+        <img class="my-banner" src="<?php echo $block->getViewFileUrl('images/map.png'); ?>" />
+    </div>
+</div>
+<span></span>
+
+
+https://www.youtube.com/watch?v=o8-q8wPCP3U
+
+<img class="video-image" src="{{media url="wysiwyg/panel/IRWIN-Video_07.jpg"}}" alt="" />
+<div class="callfor-popup">
+    <div class="youtube-video">
+        <iframe id="our-video" src="https://www.youtube.com/embed/LN-Z88NilT8" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div>
+
+<!-- TODO: popup -->
+
+<script>
+    require(
+        [
+            'jquery',
+            'Magento_Ui/js/modal/modal'
+        ],
+        function(
+            $,
+            modal
+        ) {
+            var modaloption = {
+                type: 'popup',
+                modalClass: 'ourcompany-popup',
+                responsive: true,
+                innerScroll: true,
+                clickableOverlay: true,
+                title: 'Our Company',
+                buttons: [{
+                    text: $.mage.__('Close'),
+                    class: 'action-primary',
+                    click: function() {
+                        this.closeModal();
+                    }
+                }]
+            };
+            var callforoption = modal(modaloption, $('.callfor-popup'));
+            $('img.video-image').on('click', function() {
+                $('.callfor-popup').modal('openModal');
+            });
+            $('.ourcompany-popup .action-primary').on('click', function() {
+                var video = $("#our-video").attr("src");
+                $("#our-video").attr("src", "");
+                $("#our-video").attr("src", video);
+            });
+
+            // Close Modal
+            $('#popup-modal').modal('openModal').on('modalclosed', function() { 
+                /*insert code here*/ 
+            });
+        }
+    );
+</script>
+
+<script type="text/javascript">
+    require(
+        [
+            'jquery',
+            'Magento_Ui/js/modal/modal'
+        ],
+        function(
+            $,
+            modal
+        ) {
+            var modaloption = {
+                type: 'popup',
+                modalClass: 'confirm-show confirm',
+                responsive: true,
+                innerScroll: false,
+                clickableOverlay: true,
+                title: 'Updating',
+                buttons: false
+            };
+            var popup = modal(modaloption, $('#see-details-popup'));
+            $("button[name='update_cart_action']").on('click', function() {
+                $('#see-details-popup').modal('openModal');
+            });
+            $('body').on('click', '.action-accept.action-primary', function() {
+                $('#see-details-popup').modal('closeModal');
+            });
+            $('body').on('click', '.modal-header .action-close', function() {
+                $('#see-details-popup').modal('closeModal');
+            });
+        }
+    );
+</script>
+
+<!-- TODO: CONFIRM -->
+<script type="text/javascript">
+    require(
+        [
+            'jquery',
+            'Magento_Ui/js/modal/confirm'
+        ],
+        function(
+            $,
+            confirmation
+        ) {
+            $("button[name='update_cart_action']").on('click', function(e) {
+                e.preventDefault();
+                confirmation({
+                    title: 'Accept user',
+                    content: 'Do you want to accept this user?',
+                    actions: {
+
+                        confirm: function() {
+                            $.ajax({
+                                showLoader: true,
+                                url: 'route-for-controller',
+                                data: {},
+                                type: "POST",
+                                success: function(data) {
+                                    console.log(data);
+                                },
+                                error: function(error) {
+
+                                }
+                            });
+                        },
+
+                        cancel: function() {
+                            return false;
+                        }
+                    }
+                });
+            });
+
+            //TODO: Spinner input
+            $('.checkout-cart-index .input-text.qty').each(function() {
+                $('<div class="quantity-nav"><div class="quantity-button quantity-up"></div><div class="quantity-button quantity-down"></div></div>').insertAfter(this);
+            });
+
+            $('.control.qty label').each(function() {
+                var spinner = $(this),
+                    input = spinner.find('input[type="number"].input-text.qty'),
+                    btnUp = spinner.find('.quantity-up'),
+                    btnDown = spinner.find('.quantity-down');
+                    min = input.attr('min'),
+                    max = input.attr('max');
+
+                btnUp.click(function() {
+                    var oldValue = parseFloat(input.val());
+                    if (oldValue >= max) {
+                        var newVal = oldValue;
+                    } else {
+                        var newVal = oldValue + 1;
+                    }
+                    spinner.find("input").val(newVal);
+                    spinner.find("input").trigger("change");
+                });
+
+                btnDown.click(function() {
+                    var oldValue = parseFloat(input.val());
+                    if (oldValue <= min) {
+                        var newVal = oldValue;
+                    } else {
+                        var newVal = oldValue - 1;
+                    }
+                    spinner.find("input").val(newVal);
+                    spinner.find("input").trigger("change");
+                });
+            });
+        }
+    );
+</script>
+
+<!--  -->
+<link rel="stylesheet" type="text/css" href="YouTubePopUp.css">
+<script type="text/javascript" src="jquery-1.12.1.min.js"></script>
+<script type="text/javascript" src="YouTubePopUp.jquery.js"></script>
+<script type="text/javascript">
+    jQuery(function() {
+        jQuery("a.bla-1").YouTubePopUp();
+        jQuery("a.bla-2").YouTubePopUp({
+            autoplay: 0
+        }); // Disable autoplay
+    });
+</script>
+<!--  -->
+YouTube:
+<a class="bla-1" href="https://www.youtube.com/watch?v=3qyhgV0Zew0">With Autoplay</a>
+<a class="bla-2" href="https://www.youtube.com/watch?v=3qyhgV0Zew0">Without Autoplay</a>
+<!--  -->
+Vimeo:
+<a class="bla-1" href="https://vimeo.com/81527238">With Autoplay</a>
+<a class="bla-2" href="https://vimeo.com/81527238">Without Autoplay</a>
+<!--  -->
+<script type="text/x-magento-init">
+    {
+    "*": {
+        "youtubepopup": {}
+    }
+}
+</script>
+<!--  -->
+<link rel="stylesheet" type="text/css" href="<?php echo $block->getViewFileUrl('Magento_Theme::css/owl.carousel.css') ?>">
+<!--  -->
+<a class="bla-2" dis href="https://www.youtube.com/watch?v=3qyhgV0Zew0"><img class="video-image" src="{{media url="wysiwyg/panel/IRWIN-Video_07.jpg"}}" alt="" /></a>
+<script>
+    require(
+        [
+            'jquery',
+            'youtubepopup'
+        ],
+        function($) {
+            $("a.bla-2").YouTubePopUp({
+                autoplay: 0
+            });
+        }
+    );
+</script>
+<script>
+    require([
+        'jquery',
+        'owlcarouselslider'
+    ], function($) {
+        'use strict';
+        $('.owl-carousel').owlCarousel({
+            items: 4,
+            margin: 30
+            // loop: true,
+            // autoplay:true,
+            // autoplayTimeout:5000,
+            // autoplayHoverPause: true
+        });
+
+
+    });
+</script>
+
+<script type="text/javascript">
+    require([
+        'jquery',
+        'jquery/jquery.cookie',
+        'fancybox/js/jquery.fancybox'
+    ], function($) {
+
+        $(document).ready(function() {
+            <?php if ($popup['enable'] == 1) : ?>
+                if ($("body").hasClass("cms-index-index")) {
+                <?php endif; ?>
+
+                // TODO: remove cookies
+                $.cookie("storelistpopup", null, { path: '/' });
+                // TODO: remove cookies
+                
+                var check_cookie = $.cookie('newsletter_popup');
+                $.cookie('storelistpopup', nameStore);
+
+
+                if (window.location != window.parent.location) {
+                    $('#newsletter_popup').remove();
+                } else {
+                    if (check_cookie == null || check_cookie == 'shown') {
+                        setTimeout(function() {
+                            beginNewsletterForm();
+                        }, <?php echo $delay; ?>);
+                    }
+                    $('#newsletter_popup_dont_show_again').on('change', function() {
+                        if ($(this).length) {
+                            var check_cookie = $.cookie('newsletter_popup');
+                            if (check_cookie == null || check_cookie == 'shown') {
+                                $.cookie('newsletter_popup', 'dontshowitagain');
+                            } else {
+                                $.cookie('newsletter_popup', 'shown');
+                                beginNewsletterForm();
+                            }
+                        } else {
+                            $.cookie('newsletter_popup', 'shown');
+                        }
+                    });
+                }
+                <?php if ($popup['enable'] == 1) : ?>
+                }
+            <?php endif; ?>
+        });
+
+        function beginNewsletterForm() {
+            $.fancybox({
+                'padding': '0px',
+                'autoScale': true,
+                'transitionIn': 'fade',
+                'transitionOut': 'fade',
+                'type': 'inline',
+                'href': '#newsletter_popup',
+                'onComplete': function() {
+                    $.cookie('newsletter_popup', 'shown');
+                },
+                'tpl': {
+                    closeBtn: '<a title="Close" class="fancybox-item fancybox-close fancybox-newsletter-close" href="javascript:;"></a>'
+                },
+                'helpers': {
+                    overlay: {
+                        locked: false
+                    }
+                }
+            });
+            $('#newsletter_popup').trigger('click');
+        }
+    });
+</script>
+
+
+<!-- OFF Search NOT CLICK-->
+<script type="text/javascript">
+    require([
+        'jquery',
+    ], function($) {
+        $(document).ready(function() {
+            $(".block-search > .block-title").on('click', function(e) {
+                $(this).parents('.block-search').find('.block-content').attr('style', 'opacity: 1; visibility: visible;');
+                // $(this).parents('.block-search').find('.block-content').css('display','flex');
+            });
+            $(window).on("click", function(event) {
+                if ($('.block-search').has(event.target).length == 0 && !$('.block-search').is(event.target)) {
+                    $('.block-search .block-content').attr('style', 'opacity: 0; visibility: hidden;');
+                }
+            });
+            //TODO: HEADER STICKY -->
+
+            $(window).scroll(function() {
+                var height = $(window).scrollTop();
+                if (height > 57) {
+                    $("header.page-header").addClass("sticky");
+                } else {
+                    $("header.page-header").removeClass("sticky");
+                }
+            });
+        });
+
+    });
+</script>
+
+
+<script type="text/javascript">
+    require([
+        'jquery',
+    ], function($) {
+        $(document).ready(function() {
+            $.cookie("test", 1);
+            var cookieValue = $.cookie("test");
+            $.removeCookie("test");
+        });
+
+    });
+</script>
+<!-- COOKIES -->
+<!-- FOREACH -->
+
+<script type="text/javascript">
+    require([
+        'jquery',
+    ], function($) {
+        $(document).ready(function() {
+            var url = [];
+            if ($('.page-title-wrapper').find('.breadcrumbs').length > 0) {
+                $('.page-title-wrapper .breadcrumbs ul.items li a').each(function() {
+                    url.push($(this).attr('href'));
+                });
+            }
+            console.log(url);
+            $.cookie('url', url);
+            $.cookie("storeurl", null, { domain  : origin[2] , path: '/'});
+                            $.cookie('storeurl', url, {domain  : origin[2] , path: '/' });
+        });
+
+        // TODO: FOR
+        if($('.home-mess-band').length > 0){
+                setInterval(homemess(), 3000);
+            }
+            function homemess() {
+                if ($('.home-mess-band.active').length > 0) {
+                    if ($('.home-mess-band.active').parent().find('.home-mess-band.active + .home-mess-band').length > 0) {
+                        $('.home-mess-band.active + .home-mess-band').addClass('active');
+                        $(this).removeClass('active');
+                    } else {
+                        $(this).removeClass('active');
+                        $(this).parent().find('.home-mess-band:first-child').addClass('active');
+                    }
+                }
+            };
+    });
+</script>
+
+
+<!-- TODO: WIDTH window  PRODUCT DETAIL-->
+<script type="text/javascript">
+    require([
+        'jquery',
+    ], function($) {
+        $(document).ready(function() {
+            $(".data.item.title > .data.switch").on('click', function(e) {
+                if ($(window).width() < 768) {
+                    if ($(this).parent().hasClass('active')) {
+                        $(this).parent().removeClass('active');
+                        $('.data.item.content').attr('style', 'display:none');
+                        e.stopImmediatePropagation();
+                        e.preventdefault();
+                    }
+                }
+            });
+        });
+
+        $(window).on("load", function() {
+            console.log("window loaded");
+            if ($(window).width() < 630) {
+                if ($('.catalogsearch-result-index .page-title .base').length > 0) {
+                    var height = $('.catalogsearch-result-index .page-title .base').height();
+                    height += 165;
+                    $('.filter-title strong').attr('style', 'top:' + height + 'px');
+                }
+            }
+        });
+
+        $(".data.item.title > .data.switch").on('click', function(e) {
+            var label;
+            if ($(window).width() < 768) {
+                if ($(this).parent().hasClass('active')) {
+                    $(this).parent().removeClass('active');
+                    $(this).parents('.product.data.items').find('.data.item.content').attr('style', 'opacity: 0; ');
+                    e.preventDefault();
+                    e.stopImmediatePropagation();
+                } else {
+                    $(this).parents('.product.data.items').find('.data.item.title').removeClass('active');
+                    $(this).parent().addClass('active');
+                    $(this).parents('.product.data.items').find('.data.item.content').attr('style', 'opacity: 0; ');
+                    label = $(this).parent().attr('id');
+                    $(this).parents('.product.data.items').find("[aria-labelledby='" + label + "']").attr('style', 'opacity: 1;');
+                    e.preventDefault();
+                    e.stopImmediatePropagation();
+                }
+            } else {
+                $(this).parents('.product.data.items').find('.data.item.title').removeClass('active');
+                $(this).parent().addClass('active');
+                $(this).parents('.product.data.items').find('.data.item.content').attr('style', 'opacity: 0; position: absolute; ');
+                label = $(this).parent().attr('id');
+                $(this).parents('.product.data.items').find("[aria-labelledby='" + label + "']").attr('style', 'opacity: 1;');
+                e.preventDefault();
+                e.stopImmediatePropagation();
+            }
+
+        });
+
+
+    });
+</script>
+
+<!-- cookie -->
+
+https://stackoverflow.com/questions/1458724/how-do-i-set-unset-a-cookie-with-jquery
+
+
+
+
+<!-- /////QTY -->
+<script>
+    require([
+        'jquery',
+        'mage/mage',
+        'Magento_Catalog/product/view/validation',
+        'Magento_Catalog/js/catalog-add-to-cart'
+    ], function($) {
+        'use strict';
+
+        $('#product_addtocart_form').mage('validation', {
+            radioCheckboxClosest: '.nested',
+            submitHandler: function(form) {
+                var widget = $(form).catalogAddToCart({
+                    bindSubmit: false
+                });
+
+                widget.catalogAddToCart('submitForm', $(form));
+
+                return false;
+            }
+        });
+
+
+        /// FIX QTY MAX LENGTH
+        if ($("input.input-text.qty").length > 0) {
+            var vals = $("input.input-text.qty").val();;
+            if (vals.length == 5) {
+                $("input.input-text.qty").attr('style', 'width: 65px; ');
+            } else if (vals.length == 4) {
+                $("input.input-text.qty").attr('style', 'width: 55px; ');
+            }
+        }
+        $('body').on('keyup', 'input.item-qty.cart-item-qty', function(e) {
+            if (e.keyCode != 8) {
+                var $field = $(this),
+                    val = this.value;
+                if (val.length >= 5) {
+                    val = val.slice(0, 5);
+                    // $field.attr('style', 'width: 65px; ');
+                    $field.val(val);
+                }
+            }
+        });
+
+        $("input.input-text.qty").on("keyup", function(e) {
+            if (e.keyCode != 8) {
+                var $field = $(this),
+                    val = this.value;
+                if (val.length >= 5) {
+                    val = val.slice(0, 5);
+                    $field.attr('style', 'width: 65px; ');
+                    $field.val(val);
+                } else if (val.length == 4) {
+                    $field.attr('style', 'width: 55px; ');
+                } else {
+                    $field.attr('style', '');
+                }
+            }
+        });
+
+    });
+</script>
+
+<script type="text/javascript">
+    require([
+        'jquery',
+    ], function($) {
+        $(document).ready(function() {
+          $('.order-products-toolbar.toolbar .pages-items .item').on('click', function(e){
+            e.preventDefault();
+            e.stopPropagation();
+            $.get(e.currentTarget.href, {}, function(r){
+              // do something with the response
+            });
+          });
+        });
+    });
+</script>
+<!-- TODO: CMSBLOCK -->
+<?php 
+$newblock = $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('free-express-same-say-shipping');
+echo $newblock->toHtml();
+?>
+<!-- TODO: call a block function in phtml file -->
+<tr class="item-actions">
+    <td colspan="4">
+        <div class="actions-toolbar">
+            <?= /* @escapeNotVerified */ $block->getActions($_item) ?>
+            <?php
+            $requisitionBlock = $this->getLayout()
+                ->createBlock('Gssi\Custom\Block\Checkout\Requisition')
+                ->setTemplate('Magento_Checkout::cart/custom/requisition.phtml');
+            $requisitionBlock->setProduct($product);
+            echo ($requisitionBlock->toHtml());
+            ?>
+        </div>
+    </td>
+</tr>
+
+
+<!-- TODO: ADDTOCART  -->
+<script>
+    define([
+        'jquery',
+        'Magento_Ui/js/modal/modal'
+    ], function($, modal) {
+        'use strict';
+        return function(catalogAddToCart) {
+            $.widget('mage.catalogAddToCart', catalogAddToCart, {
+                ajaxSubmit: function(form) {
+                    console.log(form.attr('action'));
+                    $(document).ajaxSuccess((event, xhr, settings) => {
+                        if (settings.url == form.attr('action')) {
+                            this._renderTemplate();
+                            this._bindEvents();
+                        }
+                    });
+                    return this._super(form);
+                },
+                _renderTemplate: function() {
+                    var html = "<div style='display:none;' class='popup-sucess-addTocart'>Thank you</div>";
+                    $("body").append(html);
+                },
+                _bindEvents: function() {
+                    if ($(".popup-sucess-addTocart").length) {
+                        var options = {
+                            type: 'popup',
+                            responsive: true,
+                            innerScroll: true,
+                            buttons: [{
+                                text: $.mage.__('Ok'),
+                                class: '',
+                                click: function() {
+                                    this.closeModal();
+                                }
+                            }]
+                        };
+                        $(".popup-sucess-addTocart").modal(options).modal("openModal");
+                    }
+                }
+
+            });
+            return $.mage.catalogAddToCart;
+        };
+    });
+    $('.checkout-cart-index .input-text.qty').each(function () {
+			$('<div class="quantity-nav"><div class="quantity-button quantity-up"></div><div class="quantity-button quantity-down"></div></div>').insertAfter(this);
+		});
+
+		$('.checkout-cart-index .control.qty label').each(function () {
+			var spinner = $(this),
+				input = spinner.find('input[type="number"].input-text.qty'),
+				btnUp = spinner.find('.quantity-up'),
+				btnDown = spinner.find('.quantity-down');
+			btnUp.click(function () {
+				var oldValue = parseFloat(input.val());
+				var newVal = oldValue + 1;
+				input.val(newVal);
+				// spinner.find("input").trigger("change");
+			});
+
+			btnDown.click(function () {
+				var oldValue = parseFloat(input.val());
+				var newVal = oldValue - 1;
+				input.val(newVal);
+				// spinner.find("input").trigger("change");
+			});
+        });
+</script>
+
+
+
+<?php 
+
+//  TODO: READE JSON , OBJECT ARRAY IN PHP
+$curlSession = curl_init();
+
+const JSON_DATA_PATH = BP . '/vendor/mledoze/countries/countries.json';
+
+    curl_setopt($curlSession, CURLOPT_URL, 'https://raw.githubusercontent.com/mledoze/countries/master/countries.json');
+    curl_setopt($curlSession, CURLOPT_BINARYTRANSFER, true);
+    curl_setopt($curlSession, CURLOPT_RETURNTRANSFER, true);
+
+    $jsonData = json_decode(curl_exec($curlSession));
+    curl_close($curlSession);
+	var_dump($jsonData);
+    
+	$jsonDatas = json_decode(file_get_contents("https://raw.githubusercontent.com/mledoze/countries/master/countries.json"));
+    var_dump($jsonDatas);
+    var_dump($data->name->common); //OBJECT
+
+    $same = [];
+	$jsonDatas = json_decode(file_get_contents("https://raw.githubusercontent.com/mledoze/countries/master/countries.json"));
+	foreach ($jsonDatas as $data) {
+        $object = new stdClass();
+        $object = new class{};	
+		$object->countryid = $data->name->common;
+		$object->code = $data->cca2;
+		array_push($same,$object);
+	}
+	foreach ($same as $data) {
+	    var_dump($data);
+    }
+
+    // Special $obj->{'foo-bar'}
+    
+$block->getChildHtml('product_image');
+
+// TODO: PAGE phan trang
+// $product->getFinalPrice()!='0' ;
+                        // $product->getTypeId() == configurable;
+protected function _prepareLayout(){
+    $pageSize = $this->getConfig('mgs_landing/general/number_per_page') ? $this->getConfig('mgs_landing/general/number_per_page') : 5;
+
+    if ($this->getChildCategory()) {
+        $pager = $this->getLayout()->createBlock(
+        'Magento\Theme\Block\Html\Pager'
+        )->setAvailableLimit(array($pageSize=>$pageSize))->setCollection(
+            $this->getChildCategory()
+        );
+        // $pager2 = $this->getLayout()->createBlock(
+        //     'Magento\Catalog\Block\Product\ProductList\Toolbar'
+        //     )->setAvailableLimit(array(5=>5,10=>10,15=>15))->setShowPerPage(true)->setCollection(
+        //         $this->getChildCategory()
+        //     );
+        // $pager
+        $this->setChild('pager', $pager);
+        // $this->getChildCategory()->load();
+        
+    }
+    // return $this;
+    return parent::_prepareLayout();
+}
+
+?>
+
+
+<!-- //TODO: STORE URL -->
+{{store direct_url='identifier'}}
+
+<?php
+
+public function getStoreDefaultID($website_code){
+    $collection = $this->websiteCollectionFactory->create()->addFieldToFilter('code', ['in' => $website_code]);
+    $websiteData = $collection->getData();
+    $websiteId = $websiteData[0]['website_id'];
+    // $websiteGroups  = $websiteData->getGroups();
+    $default_store_id = $this->storeManagerInterface->getWebsite($websiteId)->getDefaultGroup()->getDefaultStoreId();
+    
+    return $default_store_id;
+}
+
+public function getStoreUrl ($website_code,$store_id = null){
+    if ($store_id == null) {
+        $store_id = $this->getStoreDefaultID($website_code);
+    }
+    // $store = $this->storeRepository->get($store_code);
+    $store = $this->storeRepository->getById($store_id);
+    return $store->getBaseUrl();
+}
+//phtml
+$block->getStoreUrl('TimbermartBCWebSite');
+
+?>
+<!-- TODO: Helper  CONFIG-->
+<?php
+$this->context->getScopeConfig()->getValue(
+    'sections/groups/fields',
+    \Magento\Store\Model\ScopeInterface::SCOPE_STORE
+);
+
+public function getConfig($configPath, $storeId = null) {
+    if ($storeId == null || $storeId == '') {
+        $storeId = $this->_storeManager->getStore()->getId();
+    }
+    $store = $this->_storeManager->getStore($storeId);
+    $config = $this->scopeConfig->getValue($configPath, \Magento\Store\Model\ScopeInterface::SCOPE_STORE, $store);
+    return $config;
+}
+// TODO: translate
+ __('Add to Order Template List')
+
+?>
+
+<!-- TODO: get new IMAGE -->
+
+/** @var $block \Magento\Catalog\Block\Product\View */
+<meta property="og:image"
+      content="<?= $block->escapeUrl($block->getImage($block->getProduct(), 'product_base_image_og')->getImageUrl()) ?>" />
+
+
+      <!--TODO: DEBUG:  -->
+      <?php
+      
+      $logger = \Magento\Framework\App\ObjectManager::getInstance()->create('Psr\Log\LoggerInterface');
+        $logger->info($extAttributes->getFcAccountNumber().'tessst');
+        $logger->info($quote->getFcAccountNumber().'tessst');
+      
+        $item->debug();
+      ?>
+
+<!-- TODO: FontAwesome -->
+font-family: "Font Awesome 5 Pro";
+font-family: 'Font Awesome 5 Brands';
+font-family: 'FontAwesome';     default
+
+<script type="text/javascript">
+        require([
+            'jquery',
+            'Magento_Ui/js/modal/modal',
+            'jquery/jquery.cookie'
+        ], function($, modal) {
+            var modaloption = {
+                type: 'popup',
+                modalClass: 'modalpopup-list-store',
+                responsive: true,
+                innerScroll: true,
+                clickableOverlay: true,
+                title: false,
+                buttons: false
+            };
+            var callforoption = modal(modaloption, $('.popup-list-store'));
+            // $('.popup-list-store').modal('openModal');
+            $(document).ready(function() {
+                var check_cookie = $.cookie('storelistpopup');
+                if (check_cookie == null || check_cookie == '0') {
+                    $('.popup-list-store').modal('openModal');
+                }
+                $('.div-dropdown-list-store .current-store span').text(checkSite());
+                $('.div-dropdown-list-store .dropdown-store-item a').on('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    var url = $(this).attr('href');
+                    var nameStore = $(this).text();
+                    $.cookie("storelistpopup", null, {
+                        path: '/'
+                    });
+                    $.cookie('storelistpopup', nameStore);
+                    window.location.replace(url);
+                });
+
+                $('.popup-list-store .store-item a').on('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    var url = $(this).attr('href');
+                    var nameStore = $(this).text();
+                    $.cookie("storelistpopup", null, {
+                        path: '/'
+                    });
+                    $.cookie('storelistpopup', nameStore);
+                    window.location.replace(url);
+                });
+            });
+
+            function checkSite() {
+                $('.div-dropdown-list-store .current-store').attr('data-url', '<?php echo $currentUrl; ?>');
+                var nameStore = 'Select Store';
+                $('.dropdown-store-item').each(function() {
+                    if ($(this).find('a').attr('href') == $('.div-dropdown-list-store .current-store').attr('data-url')) {
+                        nameStore = $(this).find('a').text();
+                        $(this).addClass('active');
+                    }
+                });
+                return nameStore;
+            }
+
+
+
+            // TODO: DELAY
+            
+            function fixpin() {
+                if ($('.lookbook-container .mgs-lookbook-container .pin__title').length > 0) {
+                    $('.mgs-lookbook-container .pin__title').each(function () {
+                        var width = $(this).width();
+                        var height = '';
+                        if (width > 840) {
+                            $(this).attr('style', 'width: 400px; white-space: inherit;');
+                            height = $(this).height();
+                            if (height >= 75) {
+                                $(this).attr('style', 'width: 430px; white-space: inherit; top:-100px');
+                            } else {
+                                $(this).attr('style', 'width: 400px; white-space: inherit; top:-75px');
+                            }
+                        } else if (width > 500) {
+                            $(this).attr('style', 'width: 350px; white-space: inherit;');
+                            height = $(this).height();
+                            if (height >= 75) {
+                                $(this).attr('style', 'width: 380px; white-space: inherit; top:-100px');
+                            } else {
+                                $(this).attr('style', 'width: 350px; white-space: inherit; top:-75px');
+                            }
+                        }
+                        var x = $(this).offset();
+                        console.log(x);
+
+                        var windowWidth = $(window).width();
+                        width = $(this).width();
+                        var leftScreen = x.left - width / 2;
+                        var rightScreen = windowWidth - x.left - width / 2;
+
+                        if (width > 200) {
+                            if (leftScreen < 0) {
+                                leftScreen -= 20;
+                                width += leftScreen;
+                                $(this).attr('style', 'width: ' + width + 'px; white-space: inherit;');
+                                height = $(this).height();
+                                if (height >= 150) {
+                                    $(this).css('top', '-175px');
+                                } else if (height >= 125) {
+                                    $(this).css('top', '-150px');
+                                } else if (height >= 100){
+                                    $(this).css('top', '-125px');
+                                }else if (height >= 75){
+                                    $(this).css('top', '-100px');
+                                }else {
+                                    $(this).css('top', '-75px');
+                                }
+                            }
+                            if (rightScreen < 0) {
+                                rightScreen -= 20;
+                                width += rightScreen;
+                                $(this).attr('style', 'width: ' + width + 'px; white-space: inherit;');
+                                height = $(this).height();
+                                if (height >= 150) {
+                                    $(this).css('top', '-175px');
+                                } else if (height >= 125) {
+                                    $(this).css('top', '-150px');
+                                } else if (height >= 100){
+                                    $(this).css('top', '-125px');
+                                }else if (height >= 75){
+                                    $(this).css('top', '-100px');
+                                }else {
+                                    $(this).css('top', '-75px');
+                                }
+                            }
+                        }
+
+                    });
+
+                }
+            }
+            setTimeout(fixpin, 14000);
+
+        if ($('.page-product-giftcard').length > 0) {
+            $('.box-tocart #product-addtocart-button').on('click', function(e){
+                setTimeout(addGift, 5000);
+            });
+        }
+
+        function addGift(){
+            if (checkError() == 0) {
+                // $('#giftcard-amount').prop('selectedIndex',0);
+                $('#giftcard-amount').val($('#giftcard-amount').find('option[selected]').val());
+                if($('#giftcard-amount').find('option[selected]').val() == 'custom'){
+                    $('#giftcard-amount-box').show();
+                    $('#giftcard-amount-input').show();
+                }else {
+                    $('#giftcard-amount-box').hide();
+                    $('#giftcard-amount-input').hide();
+                }
+                $('.giftcard.form input').val('');
+                $('.giftcard.form textarea').val('');
+                $('.box-tocart input.input-text.qty').val('1');
+                $('#giftcard-amount-box #giftcard-amount-input').val('');
+            }
+        }
+        
+        function checkError(){
+            var value = 0 ;
+            $('.giftcard.form input').each(function() {
+                if($(this).hasClass('mage-error')){
+                    value = 1;
+                }
+            });
+            if($('#giftcard-amount').hasClass('mage-error')){
+                value = 1;
+            }
+            if($('#giftcard-amount-box').hasClass('custom-amount-active')){
+                if($('#giftcard-amount-box #giftcard-amount-input').hasClass('mage-error')){
+                    value = 1;
+                }
+            }
+            return value;
+        }
+        
+        });
+    </script>
+
+
+<!-- TODO: minicart: RELOAD  use sections.xml-->
+
+
+</style>
+<!-- TODO: event mousemove -->
+<script>
+
+                    $(document).on('mousemove', '.mfp-container', function(event1) {	
+						imageUrl = $('.mfp-img').attr('src');
+						$(this).css('background-image', 'url("' + imageUrl + '")');
+						var $k =  event1.pageY/($('.mfp-container').height()) * 100;
+						if ($k  >  97) {
+							$k = 100;
+						}
+						if ($k  <  3) {
+							$k = 0;
+						}
+						$k  = $k + '%';
+						$(this).css("background-position-y", $k );
+					});
+
+					var touchstart;
+
+					$(document).on('touchstart', '.mfp-container', function(e) {
+						touchstart = e.originalEvent.touches[0].pageY;
+					});
+
+					$(document).on('touchmove', '.mfp-container', function(e) {
+						var newposition = parseFloat($(this).css("background-position-y").replace("%",""));
+						imageUrl = $('.mfp-img').attr('src');
+						$(this).css('background-image', 'url("' + imageUrl + '")');
+
+						var $k =  newposition + (touchstart - e.originalEvent.touches[0].pageY)/($('.mfp-container').height()) * 100;
+						if ($k  >  97) {
+							$k = 100;
+						}
+						if ($k  <  3) {
+							$k = 0;
+						}
+						$k  = $k + '%';
+						$(this).css("background-position-y", $k );
+					});
+</script>
+
+<!-- TODO: OWL -->
+<div id="home-mess" class="owl-carousel">
+    <div class="item">
+        <p data-mess="1"><b> <a title="" href="{{store direct_url='/news/gorgeous-glass-baluster-railings'}}" target="_blank">Discover More.</a></b></p>
+    </div>
+    <div class="item">
+        <p data-mess="2"><b><a title="" href="https://www.instagram.com/p/CA5eZOUH0rC/" target="_blank">Learn More.</a></b></p>
+    </div>
+    <div class="item">
+        <p data-mess="3"><b><a title="" href="{{store direct_url='/horizontal-railing'}}" target="_blank">Explore Now.</a></b></p>
+    </div>
+</div>
+<script>
+    require([
+        'jquery',
+        'owlcarouselslider'
+    ], function($) {
+        'use strict';
+        $('#home-mess').owlCarousel({
+                loop: true,
+                autoplay:true,
+                autoplayTimeout: 3000,
+                items: 1
+        });
+    });
+</script>

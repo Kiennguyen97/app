@@ -122,6 +122,7 @@ class ProductList extends NewWidget
     public function getImage_Url($product){
         $imageHelper = $this->_imageHelperFactory->create();
        return $imageHelper->init($product, 'product_thumbnail_image')->setImageFile($product->getFile())->resize(1920, 1000)->getUrl();
+    //    $this->imageHelperFactory->create()->init($product, 'product_thumbnail_image')->getUrl();
     }
 
     public function getShow()

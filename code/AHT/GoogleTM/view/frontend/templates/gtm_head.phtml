@@ -1,0 +1,29 @@
+<?php
+$googleTMHelper = $this->helper('Bnkr\GoogleTM\Helper\Data'); 
+$stores = $block->getStores();
+$pathUrl = $block->getPathUrl();
+$storeUrlList = [];
+?>
+<?php foreach ($stores as $store) : ?>
+    <?php
+        $storeUrl = $store->getBaseUrl();
+        $url = $store->getBaseUrl().''.$pathUrl;
+        $locate = $googleTMHelper->getConfigValue('general/locale/code',$store->getId());
+        // $locate = substr($googleTMHelper->getConfigValue('general/locale/code', $store->getId()),0,2);
+    ?>
+    <?php 
+    if (isset($storeUrlList[$storeUrl][0])) {
+        if(isset($storeUrlList[$storeUrl][$locate])) {
+            continue;
+        }
+    }
+    ?>
+    <?php 
+        if (!isset($storeUrlList[$storeUrl])) {
+            $storeUrlList[$storeUrl] = [];
+            $storeUrlList[$storeUrl][0] = $storeUrl;
+        }
+        $storeUrlList[$storeUrl][$locate] = $locate;
+    ?>
+    <link rel=alternate href="<?= $url ?>" hreflang="<?= $locate ?>">
+<?php endforeach; ?>

@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+    <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Email:etc/email_templates.xsd">
+        <template id="gssi_orderxml_error_reporter_email_template" label="Order Xml Generate Failed" file="orderxml_generate_failed_email_template.html" type="html" module="Gssi_ErrorReporter" area="frontend"/>
+    </config>

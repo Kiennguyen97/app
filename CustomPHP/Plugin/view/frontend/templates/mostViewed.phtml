@@ -1,0 +1,46 @@
+<?php
+/** @var \Convert\Catalog\Block\MostViewedProducts $blockMostViewed */
+$blockMostViewed= $block->getLayout()->createBlock('Convert\Catalog\Block\MostViewedProducts');
+/** @var \Magento\CatalogWidget\Block\Product\ProductsList $blockProductList */
+$blockProductList= $block->getLayout()->createBlock('\Magento\CatalogWidget\Block\Product\ProductsList');
+$items = $blockMostViewed->getCollection();
+$i = 0;
+$type = 'widget-product-grid';
+$mode = 'grid';
+$categoryName = $block->getCurrentCategory()->getName();
+?>
+<div class="block widget block-products-list <?= /* @noEscape */ $mode ?>">
+	<div class="block-title">
+		<strong><?= $block->escapeHtml(__("POPULAR ".$categoryName)) ?></strong>
+	</div>
+	<div class="block-content">
+		<div class="products-<?= /* @noEscape */ $mode ?> <?= /* @noEscape */ $mode ?>">
+			<ol class="product-items <?= /* @noEscape */ $type ?>">
+				<?php foreach ($items as $viewedProduct):?> 
+					<?php $i++; ?>
+					<?php $_item = $blockMostViewed->getLoadProduct($viewedProduct->getId()) ?>
+					<?php $iterator = 1; ?>
+					<li class="product-item">
+						<div class="product-item-info">
+							<a href="<?= $viewedProduct->getProductUrl() ?>" class="product-item-photo">
+								<?php $productImage = $blockProductList->getImage($_item,'new_products_content_widget_grid'); ?>
+								<?= $productImage->toHtml() ?> 
+							</a>
+							<div class="product-item-details">
+								<strong class="product-item-name">
+									<a title="<?= $block->escapeHtml($_item->getName()) ?>"
+										href="<?= $block->escapeUrl($blockProductList->getProductUrl($_item)) ?>"
+										class="product-item-link">
+										<?= $block->escapeHtml($_item->getName()) ?>
+									</a>
+								</strong>
+								<?= $blockProductList->getProductPriceHtml($_item, $type) ?>
+							</div>
+						</div>
+						<?php if ($i == 10) { break; } ?>
+					</li>
+				<?php endforeach; ?>
+			</ol>
+		</div>
+	</div>
+</div>

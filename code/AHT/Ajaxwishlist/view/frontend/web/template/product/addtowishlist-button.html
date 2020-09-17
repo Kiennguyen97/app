@@ -1,0 +1,21 @@
+<!-- ko if: notLogin() -->
+<button if="isAllowed()" data-bind="click: showpopup.bind($row(),$row())"
+        attr="id:getDataId($row()),
+               title: getLabel()"
+        class="action towishlist customer-login-link"
+        data-action="add-to-wishlist">
+        <span translate="getLabel()"/>
+        <input type="checkbox" class="button-convert-check-login"
+        attr="value:getDataId($row())">
+</button>
+<!-- /ko -->
+
+<!-- ko if: CustomerLogin() -->
+<button if="isAllowed()" data-bind="click: addwishlist.bind($row(),$row())"
+        attr="id:getDataId($row()),
+        title: getLabel()"
+        class="action towishlist"
+        data-action="add-to-wishlist">
+        <span translate="getLabel()"/>
+</button>
+<!-- /ko -->
